@@ -11,7 +11,7 @@ app.use(express.json());
 // Connect to database
 const db = mysql.createConnection(
     {
-      host: 'localhost',
+      host: '127.0.0.1',
       port: '3306',
       // Your MySQL username,
       user: 'root',
@@ -24,7 +24,6 @@ const db = mysql.createConnection(
 
 db.query(`SELECT * FROM candidates`, (err, rows) => {
     console.log(rows);
-    console.log(err);
 });
 
 // Default response for any other request (Not Found)
